@@ -3,21 +3,27 @@ import './App.css';
 
 function App() {
     const [light, setLight] = React.useState(false);
-    console.log(light)
-  return (
-      <>
+  /*  console.log(light)*/
+    return (
+        <>
+            <main className={light === true ? 'on' : 'off'}>
+                <section>
+                    <div className="dot"/>
+                    <button type="button"
+                            onClick={() => setLight(!light)}
+                            className={ light === true ? 'Turn on' : ' Turn off' }
+                    >
 
-    <main className="off">
-      <section>
-        <div className="dot"></div>
-        <button type="button">Turn on/off</button>
-      </section>
-    </main>
-      </>
-  );
+                   Turn on/off </button>
+                </section>
+            </main>
+        </>
+    );
 }
 
 export default App;
+
+
 /*
 1. Begin met het creëren van State, om daarin op te slaan of het licht uit (`false`) of aan (`true`) staat. Belangrijk:
 geef de waarde van de state weer in een `console.log`, zodat je het kunt zien wanneer de waarde van de state veranderd.
